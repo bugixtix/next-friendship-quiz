@@ -8,8 +8,7 @@ function Question() {
   const [QUESTIONinfo, setQUESTIONinfo] = useState({question:"", answers:[""], id:0})
   const buttonTxt:string = "Diese Frage überspringen"
   const header:string = ""
-  // let QUESTIONinfo:{ question?:string, answers?:string[], id?:number}={question:"", answers:[],id:0}
-
+  
   useEffect(() => {
     setQUESTIONinfo({question:Data[questionNumber].text, answers:Data[questionNumber].options, id:Data[questionNumber].id})
   }, [questionNumber])
