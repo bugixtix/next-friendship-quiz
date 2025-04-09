@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import React,{useState, useEffect} from 'react'
 import Data from '@/public/data.json'
+import Option from '@/app/componente/option'
 function Question() { 
   type TAnswerInfo = {
     question:string,
@@ -71,13 +72,5 @@ function Question() {
   )
 }
 
-function Option({text}:{text:string}):any{
-    return(
-      <div>
-            {/* <Image src={null} alt=""/> */}
-            <p>{text}</p>
-      </div>
-    )
-}
 
 export default Question

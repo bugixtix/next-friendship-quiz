@@ -1,7 +1,7 @@
 'use client'
 import React,{useEffect, useState} from 'react'
 import {useRouter, useSearchParams} from 'next/navigation'
-
+import Test from '@/app/componente/test'
 function page() {
     
     type TData = {
@@ -30,9 +30,7 @@ function page() {
 
   return (
     <div>
-        
-        <p>header</p>
-        <button type="button" onClick={HandleClick}>clickme</button>
+        <Test/>
     </div>
   )
 }
