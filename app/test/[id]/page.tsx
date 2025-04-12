@@ -2,6 +2,7 @@
 import React,{useEffect, useState} from 'react'
 import {useRouter, useSearchParams} from 'next/navigation'
 import Test from '@/app/componente/test'
+
 function page() {
     
     type TData = {
@@ -9,10 +10,15 @@ function page() {
         AID:number
     }
     
-    const [data, setData] = useState<TData[]>([])
+    const [data, setData] = useState<TData[]>([{QID:0,AID:0}])
+    const [name, setName] = useState<string>('')
     let query:any = useSearchParams();
     
     useEffect(()=>{
+        let name:string = query?.get('name')
+        setName(name)
+
+        // 
         let queryEncode = query?.get('data')
         
         let querySplit = queryEncode.split(',')
@@ -21,16 +27,13 @@ function page() {
             const [q,a] = item.split('-')
             return {QID:Number(q),AID:Number(a)}
         })
-        setData(dataArray)
+        setData([...dataArray])
+        console.log(dataArray)
     },[])
-
-    const HandleClick = () :void=>{
-        console.log(data)
-    }
 
   return (
     <div>
-        <Test/>
+        <Test name={name} data={data}/>
     </div>
   )
 }

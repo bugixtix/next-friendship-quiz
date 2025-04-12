@@ -20,6 +20,7 @@ function GenerateLink() {
     }
     const router = useRouter()
     const [answers, setAnswers] = useState<TAnswerInfo[]>([{question:"",questionID:0,answer:"",answerID:0}])
+    const [name, setName] = useState<string>('')
     const text:TText = {
         header:"Dein Quiz ist fertig!",
         todo:["Link kopieren","Sende den Link an deine Freunde und ermutige sie, an deinem Quiz teilzunehmen.","Teile dein Quiz über eines der folgenden sozialen Netzwerke.","Komm später wieder, um die Ergebnisse deiner Freunde zu sehen!"],
@@ -32,14 +33,18 @@ function GenerateLink() {
     const HandleLink =(answers:TAnswerInfo[]):void=>{
         const testID:string = uuidv4()
         const encoded = answers.map(a=>`${a.questionID}-${a.answerID}`)
-        router.push(`/test/${testID}?data=${encoded}`)
+        router.push(`/test/${testID}?data=${encoded}&name=${name}`)
     }
     useEffect(()=>{
         // console.log(id)
+        let lsName_:any = localStorage.getItem('name')
+        let name_ :string = JSON.parse(lsName_)
+        setName(name_)
+        // 
         let lsAnswers:any = localStorage.getItem("answers") || [{question:"",questionID:0,answer:"",answerID:0}]
         lsAnswers = JSON.parse(lsAnswers)
         setAnswers(lsAnswers)
-        console.log(lsAnswers)
+        // console.log(lsAnswers)
     },[])
 
   return (
