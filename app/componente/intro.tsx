@@ -33,7 +33,7 @@ function Intro() {
     }
   return (
     <div className='w-[100%] flex flex-col items-center my-4 relative'>
-        <div className='flex flex-col border-2 border-white p-8 rounded-lg gap-2 m-4 sm:m-0 sm:w-[60%]'>
+        <div className='flex flex-col border-2 border-white p-8 rounded-lg gap-2 m-4 sm:m-0 sm:w-[100%]'>
             <h2 className='text-2xl'>{text._header}</h2>
             <p>{text._description}</p>
             <input type='text' ref={ref} onChange={DoChangeName} value={nameEntered} placeholder={text._inputPlaceholder} className='p-2 my-2 border-2 rounded-sm focus:outline-none focus:border-blue-400'/>

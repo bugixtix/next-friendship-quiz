@@ -4,10 +4,10 @@ import Question from "@/app/componente/question"
 
 function Main() {
   return (
-    <div>
-        <div className="w-[100%] p-4 flex flex-col items-center my-4">
+    <div className="flex flex-col items-center justify-center min-h-[100vh]">
+        <main className="sm:w-[60%] min-h-[100vh] flex flex-col items-center justify-center">
             <Question/>
-        </div>
+        </main>
     </div>
   )
 }
