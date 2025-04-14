@@ -19,7 +19,7 @@ function Question() {
   }
 
   const [nameEntered, setNameEntered] = useState<string>("")
-  const [skippedIndex, setSkippedIndex] = useState<number>(0)
+  const [skippedIndex, setSkippedIndex] = useState<number>(20)
   const [isDone, setIsDone] = useState<boolean>(false)
   const [questionNumber, setQuestionNumber] = useState<number>(0)
   const [QUESTIONinfo, setQUESTIONinfo] = useState<dataItem>({question:"", answers:[""], id:0, images:["/images/tea.jpg","/images/tea.jpg","/images/tea.jpg","/images/tea.jpg"]})
@@ -64,7 +64,7 @@ function Question() {
         <div className="flex flex-wrap gap-2 items-stretch justify-evenly">
           {QUESTIONinfo.answers.map((_answer, _index)=>(<div className="flex flex-col items-stretch" key={_index} onClick={()=>{HandleAnswerClick(_answer, _index)}}><Option text={_answer} image={QUESTIONinfo.images[_index]} /></div>))}
         </div>
-        <button title={skippedIndex===0 && 'Du hast keine ausreichende Fragen, die du überspringen kannst.'} disabled={skippedIndex===0} className={`${skippedIndex===0 ? 'bg-gray-600 cursor-not-allowed ':'bg-transparent hover:border-blue-500 cursor-pointer'} border-2 p-2 mt-4 border-white  transition duration-300 rounded-xs`} type="button" onClick={IncreaseQuestionNumber}>{buttonTxt}</button>
+        <button title={skippedIndex===0 ? 'Du hast keine ausreichende Fragen, die du überspringen kannst.':''} disabled={skippedIndex===0} className={`${skippedIndex===0 ? 'bg-gray-600 cursor-not-allowed ':'bg-transparent hover:border-blue-500 cursor-pointer'} border-2 p-2 mt-4 border-white  transition duration-300 rounded-xs`} type="button" onClick={IncreaseQuestionNumber}>{buttonTxt}</button>
       </>
       :
       <>
