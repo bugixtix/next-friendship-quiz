@@ -58,6 +58,7 @@ function GenerateLink() {
         setCopied(true)
     }
     useEffect(()=>{
+        let testID:string = uuidv4()
         // console.log(id)
         let lsName_:any = localStorage.getItem('name')
         let name_ :string = JSON.parse(lsName_)
@@ -67,11 +68,26 @@ function GenerateLink() {
         lsAnswers = JSON.parse(lsAnswers)
         setAnswers(lsAnswers)
         
-        const encodedData = lsAnswers.map((a:any)=>`${a?.questionID}-${a?.answerID}`)
-        const testID:string = uuidv4()
+        const encodedData = lsAnswers.map((a:any)=>`${a?.questionID}-${a?.answerID}`);
+        let previousData:any = localStorage.getItem("data") || false
+        previousData !==false ? previousData= JSON.parse(previousData) : previousData=false
+        
+        //  Vergleiche das erste Teil des Links, nicht bloß die Data Variable!
+        const areEqual = encodedData.length === previousData.length && encodedData.every((val:string, index:number)=>val===previousData[index])
+        
+        if(areEqual){
+            let x:any = localStorage.getItem("testID")
+            x = JSON.parse(x)
+        }else{
+            testID = testID + name_
+            localStorage.setItem("testID", JSON.stringify(testID))
+            localStorage.setItem("data",JSON.stringify(encodedData))    
+        }
+
+        
         const link_ = window.location.host + '/test/' + testID + '?data=' + encodedData + '&name=' + name_
         setLink(link_)
-        console.log(link_)
+        // console.log(link_)
         // console.log(lsAnswers)
 
         return()=>localStorage.removeItem('answers')
