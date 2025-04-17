@@ -66,14 +66,13 @@ function Test({name="Gast",data=[{QID:-1,AID:0}]}:{name:string, data?:TData[]}) 
   return (
     <div>
 
-        <div className='flex flex-col border-2 border-white p-8 rounded-lg gap-2 m-4 sm:m-0 sm:w-[60%]'>
+        <div className='flex flex-col border-2 border-white sm:p-8 p-1 rounded-lg gap-1 m-1 sm:m-0'>
 
-            <p>{name}</p>
-            <p>hier</p>
-            <button className="" type="button" onClick={IncreaseQuestionNumber}>{Text.buttonText}</button>
-            <h2>{data_[index].question}</h2>
-            <h2>{data_[index].correctAnswer}</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <p className="text-lg">Hallo {name}!</p>
+            {/* <button className="" type="button" onClick={IncreaseQuestionNumber}>{Text.buttonText}</button> */}
+            <h2 className="text-lg">{data_[index].question}</h2>
+            {/* <h2>{data_[index].correctAnswer}</h2>  */}
+            <div className="flex flex-row flex-wrap items-center justify-center sm:gap-4 gap-2">
                 {data_[index].answers.map((_answer, _index)=>(<div key={_index} onClick={()=>{HandleAnswerClick(_answer, _index)}}><Option text={_answer} /></div>))}
             </div>
 

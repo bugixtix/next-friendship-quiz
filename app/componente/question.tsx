@@ -58,7 +58,7 @@ function Question() {
 
       {!isDone ?
       <>
-        <p>Hallo {nameEntered}, bereit um deine Freund zu testen? Los geht's!</p>
+        <p className="text-lg">Hallo {nameEntered}, bereit um deine Freund zu testen? Los geht's!</p>
         <h2 className="text-lg py-2">{USERanswer.length+1 + ". " + QUESTIONinfo.question}</h2>
         <h2></h2>
         <div className="flex flex-wrap gap-2 items-stretch justify-evenly">

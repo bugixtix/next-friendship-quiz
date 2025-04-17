@@ -2,7 +2,7 @@
 import React,{useEffect, useState} from 'react'
 import {useRouter, useSearchParams} from 'next/navigation'
 import Test from '@/app/componente/test'
-
+import Navbar from '@/app/componente/navbar'
 function page() {
     
     type TData = {
@@ -33,7 +33,10 @@ function page() {
 
   return (
     <div>
-        <Test name={name} data={data}/>
+        <Navbar/>
+        <div className="flex flex-col items-center justify-center min-h-[90vh]">
+            <Test name={name} data={data}/>
+        </div>
     </div>
   )
 }

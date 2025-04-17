@@ -103,8 +103,10 @@ function GenerateLink() {
 
             <div className="my-4">
                 <p className="text-lg sm:text-lg ">{text.header2}</p>
+                <div className=" w-[100%] flex flex-row flex-wrap gap-2">
                 <input name="first" id="input" type="text" className="bg-gray-800 focus:outline-none text-lg px-2 py-1" value={link} onChange={()=>{}}/>
                 <button name="fourth" type="button" className={`px-2 border-2 mx-2 py-1 cursor-pointer transition-all duration-300 ${copied?'bg-gray-800 border-gray-800':'hover:border-blue-400'}`} onClick={DoCopyToClipboard}>{copied ? "Kopiert!" : "Link Kopieren"}</button>
+                </div>
             </div>
 
             <div className="flex flex-row flex-wrap gap-2 items-start">
