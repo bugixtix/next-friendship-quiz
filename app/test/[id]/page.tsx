@@ -3,6 +3,7 @@ import React,{useEffect, useState} from 'react'
 import {useRouter, useSearchParams} from 'next/navigation'
 import Test from '@/app/componente/test'
 import Navbar from '@/app/componente/navbar'
+import Intro from '@/app/componente/intro'
 function page() {
     
     type TData = {
@@ -12,6 +13,7 @@ function page() {
     
     const [data, setData] = useState<TData[]>([{QID:0,AID:0}])
     const [name, setName] = useState<string>('')
+    const [friendName, setFriendName] = useState<string>('')
     let query:any = useSearchParams();
     
     useEffect(()=>{
@@ -34,9 +36,18 @@ function page() {
   return (
     <div>
         <Navbar/>
+
+        {
+            friendName === '' && 
+            <Intro/>
+        }
+
+        {
+            friendName !== '' &&
         <div className="flex flex-col items-center justify-center min-h-[90vh]">
             <Test name={name} data={data}/>
         </div>
+        }
     </div>
   )
 }
