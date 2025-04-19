@@ -1,28 +1,36 @@
 
 'use client'
 import React, { useState, useRef } from 'react'
+type TText = {
+    _header:string,
+    _description:string, 
+    _inputPlaceholder:string,
+    _button:string,
+    _message:string
+} 
 
-function Intro() {
+function Intro({_text={
+    _header: "",
+    _description: '',
+    _inputPlaceholder: '',
+    _button: '',
+    _message:''
+}, _href, _lsKey}:{_text:TText,_href:string, _lsKey:string}) {
     const ref = useRef<any>(null)
     const [nameEntered, setNameEntered] = useState<string>("")
     const [submitted, setSubmitted] = useState<boolean>(false)
     const message:string = "Bitte schreibe zuerst deinen Namen hinauf"
-    type TText = {
-        _header:string,
-        _description:string, 
-        _inputPlaceholder:string,
-        _button:string
-    } 
     const text:TText = {
         _header:"Beste Freunde Quiz - Wie gut kennst du mich?",
         _description:"Schreibe deinen Namen auf",
         _inputPlaceholder:"Dein Name",
-        _button:"Okei"
+        _button:"Okei",
+        _message:""
     }
     const DoSubmit = ():void =>{
         if(ref.current.value.length >= 2){
-            localStorage.setItem('name', JSON.stringify(nameEntered))
-            window.location.assign('/quiz')
+            localStorage.setItem(_lsKey, JSON.stringify(nameEntered))
+            window.location.assign(_href)
         }
         else setSubmitted(true)
 
@@ -34,11 +42,11 @@ function Intro() {
   return (
     <div className='w-[100%] flex flex-col items-center my-4 relative'>
         <div className='flex flex-col border-2 border-white p-2 sm:p-8 rounded-lg gap-2 sm:m-4 sm:w-[100%]'>
-            <h2 className='text-lg sm:text-2xl'>{text._header}</h2>
-            <p>{text._description}</p>
-            <input type='text' ref={ref} onChange={DoChangeName} value={nameEntered} placeholder={text._inputPlaceholder} className='p-2 my-2 border-2 rounded-sm focus:outline-none focus:border-blue-400'/>
-            <button  type="button" onClick={DoSubmit} className='bg-blue-400 cursor-pointer rounded-sm text-black text-center hover:bg-blue-600 transition-all duration-500 p-2 '> {text._button}</button>
-            <p >{submitted && <span>{message}</span>}</p>
+            { _text._header!== '' && <h2 className='text-lg sm:text-2xl'>{_text._header}</h2>}
+            { _text._description!=='' && <p>{_text._description}</p>}
+            <input type='text' ref={ref} onChange={DoChangeName} value={nameEntered} placeholder={_text._inputPlaceholder} className='p-2 my-2 border-2 rounded-sm focus:outline-none focus:border-blue-400'/>
+            <button  type="button" onClick={DoSubmit} className='bg-blue-400 cursor-pointer rounded-sm text-black text-center hover:bg-blue-600 transition-all duration-500 p-2 '> {_text._button}</button>
+            <p >{submitted && <span>{_text._message}</span>}</p>
         </div>
     </div>
   )

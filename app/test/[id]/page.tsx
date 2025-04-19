@@ -11,6 +11,14 @@ function page() {
         AID:number
     }
     
+    type TText = {
+        _header:string,
+        _description:string, 
+        _inputPlaceholder:string,
+        _button:string,
+        _message:string
+    } 
+
     const [data, setData] = useState<TData[]>([{QID:0,AID:0}])
     const [name, setName] = useState<string>('')
     const [friendName, setFriendName] = useState<string>('')
@@ -33,13 +41,22 @@ function page() {
         console.log(dataArray)
     },[])
 
+    const text:TText = {
+        _header:"Beste Freunde Quiz - Wie gut kennst du mich?",
+        _description:"Schreibe deinen Namen auf",
+        _inputPlaceholder:"Dein Name",
+        _button:"Okei",
+        _message:"Bitte schreibe zuerst deinen Namen auf!"
+    }
+    const lsKey:string = "name"
+    const href:string = "/quiz"
   return (
     <div>
         <Navbar/>
 
         {
             friendName === '' && 
-            <Intro/>
+            <Intro _text={text} _lsKey={lsKey} _href={href}/>
         }
 
         {
