@@ -25,11 +25,11 @@ export default function Home() {
   return (
     <div>
       <Navbar/>
-    <div className="flex flex-col justify-center items-center min-h-[90vh] ">
-          <main className="sm:w-[60%]">
-            <Intro _text={text} _lsKey={lsKey} _href={href}/>
-          </main>
-    </div>
+      <div className="flex flex-col justify-center items-center min-h-[90vh] ">
+        <main className="sm:w-[60%]">
+          <Intro _text={text} _lsKey={lsKey} _href={href}/>
+        </main>
+      </div>
     </div>
   );
 }

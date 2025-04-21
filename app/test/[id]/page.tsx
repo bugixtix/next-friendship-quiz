@@ -18,16 +18,24 @@ function page() {
         _button:string,
         _message:string
     } 
-
+    const [text, setText] = useState<TText>({
+        _header:"Beste Freunde Quiz - Wie gut kennst du",
+        _description:"Schreibe bitte deinen Namen auf",
+        _inputPlaceholder:"Dein Name",
+        _button:"Okei",
+        _message:"Bitte schreibe zuerst deinen Namen auf!"
+    })
     const [data, setData] = useState<TData[]>([{QID:0,AID:0}])
     const [name, setName] = useState<string>('')
     const [friendName, setFriendName] = useState<string>('')
+    const [cbValue, setCbValue] = useState<boolean>(false)
     let query:any = useSearchParams();
     
     useEffect(()=>{
         let name:string = query?.get('name')
         setName(name)
-
+        // 
+        setText((p)=>({...p,_header:`Beste Freunde Quiz - Wie gut kennst du ${name}?`}))
         // 
         let queryEncode = query?.get('data')
         
@@ -41,22 +49,20 @@ function page() {
         console.log(dataArray)
     },[])
 
-    const text:TText = {
-        _header:"Beste Freunde Quiz - Wie gut kennst du mich?",
-        _description:"Schreibe deinen Namen auf",
-        _inputPlaceholder:"Dein Name",
-        _button:"Okei",
-        _message:"Bitte schreibe zuerst deinen Namen auf!"
-    }
-    const lsKey:string = "name"
-    const href:string = "/quiz"
+
+    const lsKey:string = "friendName"
+    const href:string = ""
   return (
     <div>
         <Navbar/>
 
         {
-            friendName === '' && 
-            <Intro _text={text} _lsKey={lsKey} _href={href}/>
+            cbValue === false && 
+            <div className="w-[100%] flex flex-col flex-wrap justify-center items-center min-h-[80vh]">
+            <div className="sm:w-[60%] flex flex-wrap justify-center items-center">
+            <Intro _text={text} _lsKey={lsKey} _href={href} callback={setCbValue}/>
+            </div>
+            </div>
         }
 
         {

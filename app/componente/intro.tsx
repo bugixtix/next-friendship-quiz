@@ -15,7 +15,7 @@ function Intro({_text={
     _inputPlaceholder: '',
     _button: '',
     _message:''
-}, _href, _lsKey}:{_text:TText,_href:string, _lsKey:string}) {
+}, _href, _lsKey, callback}:{_text:TText,_href:string, _lsKey:string,callback?:()=>void}) {
     const ref = useRef<any>(null)
     const [nameEntered, setNameEntered] = useState<string>("")
     const [submitted, setSubmitted] = useState<boolean>(false)
@@ -30,11 +30,14 @@ function Intro({_text={
     const DoSubmit = ():void =>{
         if(ref.current.value.length >= 2){
             localStorage.setItem(_lsKey, JSON.stringify(nameEntered))
-            window.location.assign(_href)
+            if(_href){
+                window.location.assign(_href)
+            }
         }
         else setSubmitted(true)
 
-        console.log(submitted)
+        // I'm seeing this method for the first time!
+        callback?.()
     }
     const DoChangeName=(e:any):void=>{
         setNameEntered(e.target.value)
