@@ -27,7 +27,7 @@ function page() {
     })
     const [data, setData] = useState<TData[]>([{QID:0,AID:0}])
     const [name, setName] = useState<string>('')
-    const [friendName, setFriendName] = useState<string>('')
+    const [friendName, setFriendName] = useState<string | boolean>('')
     const [cbValue, setCbValue] = useState<boolean>(false)
     let query:any = useSearchParams();
     
@@ -46,9 +46,23 @@ function page() {
             return {QID:Number(q),AID:Number(a)}
         })
         setData([...dataArray])
-        console.log(dataArray)
+        // console.log(dataArray)
     },[])
 
+    useEffect(() => {
+        let Y:any = localStorage.getItem("friendName")
+        Y = JSON.parse(Y)
+        let value:string|boolean  = Y || false
+        const x = typeof value
+        if(x!=="boolean") setFriendName(value)
+
+    
+    }, [cbValue])
+    
+
+    const HandleCallback = ():void=>{
+        setCbValue(true)
+    }
 
     const lsKey:string = "friendName"
     const href:string = ""
@@ -60,15 +74,15 @@ function page() {
             cbValue === false && 
             <div className="w-[100%] flex flex-col flex-wrap justify-center items-center min-h-[80vh]">
             <div className="sm:w-[60%] flex flex-wrap justify-center items-center">
-            <Intro _text={text} _lsKey={lsKey} _href={href} callback={setCbValue}/>
+            <Intro _text={text} _lsKey={lsKey} _href={href} callback={HandleCallback}/>
             </div>
             </div>
         }
 
         {
-            friendName !== '' &&
+            cbValue &&
         <div className="flex flex-col items-center justify-center min-h-[90vh]">
-            <Test name={name} data={data}/>
+            <Test name={name} friendName={friendName} data={data}/>
         </div>
         }
     </div>

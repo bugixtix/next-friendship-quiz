@@ -18,7 +18,7 @@ type TFinalData = {
 type TText = {
   buttonText:string,
 }
-function Test({name="Gast",data=[{QID:-1,AID:0}]}:{name:string, data?:TData[]}) {
+function Test({name="Gast",data=[{QID:-1,AID:0}], friendName}:{name:string, data?:TData[], friendName?:string|boolean}) {
   const [data_, setData_] = useState<TFinalData[]>([{id:0, question:'',correctAnswer:'',correctAnswerId:0,answers:['','','','']}])
   const [index, setIndex] = useState<number>(0)
   const [finish, setFinish] = useState<boolean>(false)
@@ -68,7 +68,8 @@ function Test({name="Gast",data=[{QID:-1,AID:0}]}:{name:string, data?:TData[]}) 
 
         <div className='flex flex-col border-2 border-white sm:p-8 p-1 rounded-lg gap-1 m-1 sm:m-0'>
 
-            <p className="text-lg">Hallo {name}!</p>
+            {!friendName && <p className="text-lg">Hallo {name}!</p>}
+            {friendName && <p className="text-lg">Hallo {friendName}, wie gut kennst du {name}?</p>}
             {/* <button className="" type="button" onClick={IncreaseQuestionNumber}>{Text.buttonText}</button> */}
             <h2 className="text-lg">{data_[index].question}</h2>
             {/* <h2>{data_[index].correctAnswer}</h2>  */}
