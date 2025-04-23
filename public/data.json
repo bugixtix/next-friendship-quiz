@@ -17,7 +17,7 @@
     {
       "id": 3,
       "text": "Wie verbringst du am liebsten deine Freizeit?",
-      "text2": "Wie verbringt ___ am liebsten deine Freizeit?",
+      "text2": "Wie verbringt ___ am liebsten die Freizeit?",
       "options": ["Lesen", "Sport treiben", "Zocken", "Mit Freunden chillen"],
       "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
 
@@ -104,7 +104,7 @@
     {
         "id": 14,
         "text": "Was ist dein Traumjob?",
-        "text2": "Was ist ___ Traumjob?",
+        "text2": "Was ist .... Traumjob?",
         "options": ["Künstler", "Manager", "Entwickler", "Reiseblogger"],
         "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
 
@@ -145,7 +145,7 @@
         "id": 19,
         "text": "Wie stehst du zu spontanen Plänen?",
         "text2": "Wie steht ___ zu spontanen Plänen?",
-        "options": ["Ich liebe sie", "Kommt drauf an", "Lieber planen", "Mag ich nicht"],
+        "options": ["Juchu!", "Kommt drauf an", "Lieber planen", "nein nein nein"],
         "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
 
     },
