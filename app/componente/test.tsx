@@ -22,6 +22,7 @@ function Test({name="Gast",data=[{QID:-1,AID:0}], friendName}:{name:string, data
   const [data_, setData_] = useState<TFinalData[]>([{id:0, question:'',correctAnswer:'',correctAnswerId:0,answers:['','','','']}])
   const [index, setIndex] = useState<number>(0)
   const [finish, setFinish] = useState<boolean>(false)
+  const [mount, setMount] = useState<boolean>(false)
   const [correctAnswered, setCorrectAnswered] = useState<number>(0)
     useEffect(()=>{
         if(data[0].QID !== 0){
@@ -30,9 +31,12 @@ function Test({name="Gast",data=[{QID:-1,AID:0}], friendName}:{name:string, data
           .filter(item=>idMap.has(item.id))
           .map((item)=>{
             const correctIndex = idMap.get(item.id)
+            let text_ = item.text2
+            text_ = text_.replace(/\.{4}/g, name+"'s")
+            text_ = text_.replace(/\_{3}/g, name)
             return{
               id:item.id,
-              question:item.text,
+              question:text_,
               correctAnswer:item.options[correctIndex!],
               answers:item.options,
               correctAnswerId:correctIndex
@@ -40,6 +44,7 @@ function Test({name="Gast",data=[{QID:-1,AID:0}], friendName}:{name:string, data
           })
           setData_(result)
         }
+        setMount(true)
       },[JSON.stringify(data)])
       
       const IncreaseQuestionNumber = ():void =>{
@@ -62,22 +67,39 @@ function Test({name="Gast",data=[{QID:-1,AID:0}], friendName}:{name:string, data
         }else{console.log('Falsche Antwort')}
         IncreaseQuestionNumber();
       }
+
+      const TestComponente = ()=>{
+        return(
+          <div>
+            {!friendName && <p className="text-lg">Hallo {name}!</p>}
+            {friendName && <p className="text-lg">Hallo {friendName}, wie gut kennst du {name}?</p>}
+            {/* <button className="" type="button" onClick={IncreaseQuestionNumber}>{Text.buttonText}</button> */}
+            <h2 className="text-lg">{data_[index]?.question}</h2>
+            {/* <h2>{data_[index].correctAnswer}</h2>  */}
+            <div className="flex flex-row flex-wrap items-center justify-center sm:gap-4 gap-2">
+                {data_[index]?.answers.map((_answer, _index)=>(<div key={_index} onClick={()=>{HandleAnswerClick(_answer, _index)}}><Option text={_answer} /></div>))}
+            </div>
+          </div>
+        )
+      }
+
+      const FinalComponente = ()=>{
+        return(
+          <div>
+            Glückwünsch {friendName}! Du hast {correctAnswered} von 8 Punkte erreicht! 
+          </div>
+        )
+      }
     
   return (
     <div>
 
         <div className='flex flex-col border-2 border-white sm:p-8 p-1 rounded-lg gap-1 m-1 sm:m-0'>
 
-            {!friendName && <p className="text-lg">Hallo {name}!</p>}
-            {friendName && <p className="text-lg">Hallo {friendName}, wie gut kennst du {name}?</p>}
-            {/* <button className="" type="button" onClick={IncreaseQuestionNumber}>{Text.buttonText}</button> */}
-            <h2 className="text-lg">{data_[index].question}</h2>
-            {/* <h2>{data_[index].correctAnswer}</h2>  */}
-            <div className="flex flex-row flex-wrap items-center justify-center sm:gap-4 gap-2">
-                {data_[index].answers.map((_answer, _index)=>(<div key={_index} onClick={()=>{HandleAnswerClick(_answer, _index)}}><Option text={_answer} /></div>))}
-            </div>
+          {
+             finish ? <FinalComponente/> : <TestComponente/>
+          }
 
-            {finish && <h2>Du hast {correctAnswered} Fragen richtig beantwortet! </h2>}
             
         </div>
     </div>
