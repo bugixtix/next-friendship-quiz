@@ -13,13 +13,14 @@ type TFinalData = {
   question:string,
   correctAnswer:string,
   correctAnswerId:number,
-  answers:string[]
+  answers:string[],
+  images:string[]
 }
 type TText = {
   buttonText:string,
 }
 function Test({name="Gast",data=[{QID:-1,AID:0}], friendName}:{name:string, data?:TData[], friendName?:string|boolean}) {
-  const [data_, setData_] = useState<TFinalData[]>([{id:0, question:'',correctAnswer:'',correctAnswerId:0,answers:['','','','']}])
+  const [data_, setData_] = useState<TFinalData[]>([{id:0, question:'',correctAnswer:'',correctAnswerId:0,answers:['','','',''], images:['','','','']}])
   const [index, setIndex] = useState<number>(0)
   const [finish, setFinish] = useState<boolean>(false)
   const [mount, setMount] = useState<boolean>(false)
@@ -39,7 +40,8 @@ function Test({name="Gast",data=[{QID:-1,AID:0}], friendName}:{name:string, data
               question:text_,
               correctAnswer:item.options[correctIndex!],
               answers:item.options,
-              correctAnswerId:correctIndex
+              correctAnswerId:correctIndex,
+              images:item.images
             }
           })
           setData_(result)
@@ -62,22 +64,24 @@ function Test({name="Gast",data=[{QID:-1,AID:0}], friendName}:{name:string, data
       }
       const HandleAnswerClick = (_answer:string, _index:number):void =>{
         if(_index === data_[index].correctAnswerId){
-          console.log('Richtige Antwort')
+          // console.log('Richtige Antwort')
           setCorrectAnswered(p=>p+1)
-        }else{console.log('Falsche Antwort')}
+        }else{
+          // console.log('Falsche Antwort')
+        }
         IncreaseQuestionNumber();
       }
 
       const TestComponente = ()=>{
         return(
-          <div>
+          <div className="flex flex-col flex-wrap gap-2">
             {!friendName && <p className="text-lg">Hallo {name}!</p>}
-            {friendName && <p className="text-lg">Hallo {friendName}, wie gut kennst du {name}?</p>}
+            {friendName && <p className="text-lg">Hallo {friendName}, lass uns sehen wie gut du {name} kennst.</p>}
             {/* <button className="" type="button" onClick={IncreaseQuestionNumber}>{Text.buttonText}</button> */}
-            <h2 className="text-lg">{data_[index]?.question}</h2>
+            <h2 className="text-lg">⏺️ {data_[index]?.question}</h2>
             {/* <h2>{data_[index].correctAnswer}</h2>  */}
             <div className="flex flex-row flex-wrap items-center justify-center sm:gap-4 gap-2">
-                {data_[index]?.answers.map((_answer, _index)=>(<div key={_index} onClick={()=>{HandleAnswerClick(_answer, _index)}}><Option text={_answer} /></div>))}
+                {data_[index]?.answers.map((_answer, _index)=>(<div key={_index} onClick={()=>{HandleAnswerClick(_answer, _index)}}><Option text={_answer} image={data_[index].images[_index]} /></div>))}
             </div>
           </div>
         )
