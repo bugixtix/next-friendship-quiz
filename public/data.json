@@ -11,7 +11,7 @@
       "text": "Welches Reiseziel spricht dich am meisten an?",
       "text2":"Welches Reiseziel spricht ___ am meisten an?",
       "options": ["Strandurlaub", "Städtereise", "Berge", "Abenteuer im Dschungel"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/beach.jpg", "/images/city.jpg", "/images/mountains.jpg", "/images/jungle.jpg"]
 
     },
     {
@@ -19,7 +19,7 @@
       "text": "Wie verbringst du am liebsten deine Freizeit?",
       "text2": "Wie verbringt ___ am liebsten die Freizeit?",
       "options": ["Lesen", "Sport treiben", "Zocken", "Mit Freunden chillen"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/book.jpg", "/images/sport.jpg", "/images/gaming.jpg", "/images/chill.jpg"]
 
     },
     {
