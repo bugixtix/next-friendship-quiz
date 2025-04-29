@@ -27,7 +27,7 @@
       "text": "Welches Tier magst du am meisten?",
       "text2": "Welches Tier mag ___ am meisten?",
       "options": ["Katze", "Hund", "Vogel", "Fisch"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/cat.jpg", "/images/dog.jpg", "/images/bird.jpg", "/images/fish.jpg"]
 
     },
     {
@@ -35,14 +35,14 @@
       "text": "Welche Musikrichtung hörst du gern?",
       "text2": "Welche Musikrichtung hört ___ gern?",
       "options": ["Pop", "Rock", "Rap", "Klassik"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/pop.jpg", "/images/rock.jpg", "/images/rap.jpg", "/images/classic.jpg"]
     },
     {
       "id": 6,
       "text": "Was ist dein Lieblingstag in der Woche?",
       "text2": "Was ist .... Lieblingstag in der Woche?",
       "options": ["Montag", "Freitag", "Samstag", "Sonntag"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -50,7 +50,7 @@
       "text": "Welcher Superkraft würdest du wählen?",
       "text2": "Welcher Superkraft würde ___ wählen?",
       "options": ["Unsichtbarkeit", "Fliegen", "Zeitreise", "Gedankenlesen"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -58,7 +58,7 @@
       "text": "Wie stehst du zu Horrorfilmen?",
       "text2": "Wie steht ___ zu Horrorfilmen?",
       "options": ["Ich liebe sie", "Ich mag sie, aber nicht zu viele", "Nur mit anderen zusammen", "Gar nicht mein Ding"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -66,7 +66,7 @@
       "text": "Wie startest du in den Tag?",
       "text2": "Wie startet ___ in den Tag?",
       "options": ["Kaffee & Ruhe", "Musik & gute Laune", "Snooze-Taste", "Direkt produktiv"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -74,7 +74,7 @@
       "text": "Was ist dir in einer Freundschaft am wichtigsten?",
       "text2": "Was ist ___ in einer Freundschaft am wichtigsten?",
       "options": ["Ehrlichkeit", "Loyalität", "Humor", "Gemeinsame Interessen"],
-      "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+      "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -82,7 +82,7 @@
         "text": "Was ist deine Lieblingsjahreszeit?",
         "text2": "Was ist .... Lieblingsjahreszeit?",
         "options": ["Frühling", "Sommer", "Herbst", "Winter"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -90,7 +90,7 @@
         "text": "Welche Art von Serien schaust du am liebsten?",
         "text2": "Welche Art von Serien schaut ___ am liebsten?",
         "options": ["Comedy", "Drama", "Thriller", "Fantasy"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -98,7 +98,7 @@
         "text": "Wie würdest du dich selbst beschreiben?",
         "text2": "Wie würde ___ sich selbst beschreiben?",
         "options": ["Introvertiert", "Extrovertiert", "Ausgeglichen", "Chaotisch"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -106,7 +106,7 @@
         "text": "Was ist dein Traumjob?",
         "text2": "Was ist .... Traumjob?",
         "options": ["Künstler", "Manager", "Entwickler", "Reiseblogger"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -114,7 +114,7 @@
         "text": "Wie wichtig ist dir Pünktlichkeit?",
         "text2": "Wie wichtig ist ___ die Pünktlichkeit?",
         "options": ["Sehr wichtig", "Wichtig", "Geht so", "Nicht wichtig"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -122,7 +122,7 @@
         "text": "Wie reagierst du auf Stress?",
         "text2": "Wie reagiert ___ auf Stress?",
         "options": ["Ruhe bewahren", "Sport machen", "Musik hören", "Panik"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -130,7 +130,7 @@
         "text": "Welches Essen magst du am liebsten?",
         "text2": "Welches Essen mag ___ am liebsten?",
         "options": ["Pizza", "Sushi", "Burger", "Salat"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -138,7 +138,7 @@
         "text": "Was machst du bei Regenwetter?",
         "text2": "Was macht ___ bei Regenwetter?",
         "options": ["Filme schauen", "Schlafen", "Lesen", "Spazieren"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -146,7 +146,7 @@
         "text": "Wie stehst du zu spontanen Plänen?",
         "text2": "Wie steht ___ zu spontanen Plänen?",
         "options": ["Juchu!", "Kommt drauf an", "Lieber planen", "nein nein nein"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -154,7 +154,7 @@
         "text": "Was motiviert dich am meisten?",
         "text2": "Was motiviert ___ am meisten?",
         "options": ["Ziele erreichen", "Lob", "Wettbewerb", "Spaß an der Sache"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
 
@@ -163,7 +163,7 @@
         "text": "Wie gehst du mit Kritik um?",
         "text2": "Wie geht ___ mit Kritik um?",
         "options": ["Nehme sie ernst", "Ignoriere sie", "Reflektiere sie", "Reagiere emotional"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -171,7 +171,7 @@
         "text": "Was ist dein Lieblingsfach (oder war es in der Schule)?",
         "text2": "Was ist ___ Lieblingsfach (oder war es in der Schule)?",
         "options": ["Mathe", "Deutsch", "Sport", "Kunst"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -179,7 +179,7 @@
         "text": "Was machst du, wenn du schlechte Laune hast?",
         "text2": "Was macht ___, wenn er/sie schlechte Laune hat?",
         "options": ["Musik hören", "Essen", "Reden", "Allein sein"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -187,7 +187,7 @@
         "text": "Wie verbringst du lieber den Abend?",
         "text2": "Wie verbringt ___ lieber den Abend?",
         "options": ["Netflix & Couch", "Mit Freunden rausgehen", "Lesen", "Zocken"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -195,7 +195,7 @@
         "text": "Welche dieser Farben spricht dich am meisten an?",
         "text2": "Welche dieser Farben spricht ___ am meisten an?",
         "options": ["Blau", "Rot", "Grün", "Schwarz"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -203,7 +203,7 @@
         "text": "Was ist dir im Leben am wichtigsten?",
         "text2": "Was ist ___ im Leben am wichtigsten?",
         "options": ["Familie", "Erfolg", "Freiheit", "Gesundheit"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -211,7 +211,7 @@
         "text": "Welche Eigenschaft beschreibt dich am besten?",
         "text2": "Welche Eigenschaft beschreibt ___ am besten?",
         "options": ["Hilfsbereit", "Zielstrebig", "Kreativ", "Humorvoll"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -219,7 +219,7 @@
         "text": "Wie stehst du zu Social Media?",
         "text2": "Wie steht ___ zu Social Media?",
         "options": ["Aktiv", "Gelegentlich", "Nur passiv", "Gar nicht"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -227,7 +227,7 @@
         "text": "Was bedeutet für dich Glück?",
         "text2": "Was bedeutet für ___ Glück?",
         "options": ["Zufriedenheit", "Liebe", "Freiheit", "Sicherheit"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     },
     {
@@ -235,7 +235,7 @@
         "text": "Wie triffst du Entscheidungen?",
         "text2": "Wie trifft ___ Entscheidungen?",
         "options": ["Schnell & intuitiv", "Nach reiflicher Überlegung", "Spontan", "Mit Hilfe anderer"],
-        "images":["/images/coffee.jpg", "/images/tea.jpg", "/images/cola.jpg", "/images/water.jpg"]
+        "images":["/images/one.jpg", "/images/two.jpg", "/images/three.jpg", "/images/four.jpg"]
 
     }      
   ]
